@@ -4,17 +4,18 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Category from './components/Category';
 // import Products from './components/Products';
-import { fetcher } from './Fetcher';
+import { getCategories,getproducts } from './Fetcher';
+import Category_products from './components/Category_products';
 
 
 function App() {
   const [categories,setCategories]=useState({errorMessage:'',data:[]});
-  const [products,setProducts]=useState([]);
+  const [products,setProducts]=useState({errorMessage:'',data:[]});
 
   useEffect(()=>
   {
     const fetchData=async ()=>{
-    const responseObject =await fetcher("/categories");
+    const responseObject =await getCategories();
     setCategories(responseObject);
   }
   fetchData();
@@ -23,13 +24,13 @@ function App() {
 
 
 
-  const handleCategoryClick= id =>{
-    {
+  const handleCategoryClick= (id) =>{
       const fetchData=async ()=>{
-      const responseObject =await fetcher("/products?catId"+id);
+      const responseObject =await getproducts();
       setProducts(responseObject);
-    }
+    };
     fetchData();
+
   }
 
 
@@ -40,10 +41,10 @@ function App() {
   }
 
 const renderProducts=()=>{
-  return products.map(p=>
-    <div> {p.title}</div>
-  
+  return products.data.map(p => 
+    <Category_products key={p.id} {...p}>{p.title}</Category_products>
   );
+
 
 }
 
@@ -60,6 +61,7 @@ const renderProducts=()=>{
       </nav>
       <article>
         <h1>Products</h1>
+        {products.errorMessage && <div>Error:{products.errorMessage}</div>}
         {products && renderProducts()}
       </article>
     </section>
