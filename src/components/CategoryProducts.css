@@ -1,0 +1,10 @@
+.Btn{
+        padding: '10px 20px';
+        font-size: '16px';
+        border-radius: '8px';  /* // Add border radius */
+        border: 'none';/* // Remove default border*/
+        background-color: '#007BFF'; /*// Add background color*/
+        color: 'white'; /*// Text color*/
+        cursor: 'pointer'; /*// Add pointer cursor on hover*/
+        transition: 'background-color 0.3s ease';
+}
