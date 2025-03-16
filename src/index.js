@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProductDetail from './components/ProductDetail';
+import Basket from './components/Basket';
+import Checkout from './components/Checkout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -11,6 +14,9 @@ root.render(
 <BrowserRouter>
   <Routes>
     <Route path='/'element={<App/>}/>
+    <Route path='products/:productId' element={<ProductDetail/>}/>
+    <Route path='' element={<Basket/>} />
+    <Route path='' element ={<Checkout/>}/>
   </Routes>
 </BrowserRouter>
 );

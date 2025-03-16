@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import Category from './components/Category';
 import { getCategories,getproducts } from './Fetcher';
 import CategoryProducts from './components/CategoryProducts';
-
+import { Link} from "react-router-dom";
 
 function App() {
   const [categories,setCategories]=useState({errorMessage:'',data:[]});
@@ -40,7 +40,7 @@ function App() {
 
 const renderProducts=()=>{
   return products.data.map(p => 
-    <CategoryProducts {...p}>{p.title}</CategoryProducts>
+    <CategoryProducts key={p.id} {...p}>{p.title}</CategoryProducts>
   )
 
 
@@ -50,7 +50,7 @@ const renderProducts=()=>{
 
   return (
     <>
-    <header><p>My Store</p></header>
+    <header><p><Link to="/" onClick={() => window.location.reload()}>My Store</Link></p></header>
     <section> 
       <nav> 
       {categories.errorMessage && <div>Error :{categories.errorMessage}</div>}

@@ -1,10 +1,39 @@
 .Btn{
-        padding: '10px 20px';
-        font-size: '16px';
-        border-radius: '8px';  /* // Add border radius */
-        border: 'none';/* // Remove default border*/
-        background-color: '#007BFF'; /*// Add background color*/
-        color: 'white'; /*// Text color*/
-        cursor: 'pointer'; /*// Add pointer cursor on hover*/
-        transition: 'background-color 0.3s ease';
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;  /* // Add border radius */
+        border: none;/* // Remove default border*/
+        background-color: #007BFF; /*// Add background color*/
+        color: white; /*// Text color*/
+        cursor: pointer; /*// Add pointer cursor on hover*/
+        transition: background-color 0.3s ease;
+        
+}
+
+.dimcap{
+    flex: 1;
+    padding-left: 800px;
+    font-family:'Lato';
+    color: #333;
+    margin-top:-14cm ;
+    padding-bottom: 10cm;
+}
+
+.category-product-finance-price{
+    font-size: 30px;
+    font-weight: bolder;
+    margin-top: -140px;
+}
+
+.prodec{
+    flex: 1;
+    padding-left: 800px;
+    font-family:'Lato';
+    color: #333;
+    margin-top:-13cm ;
+
+}
+.category-product-finance-price-PD{
+    font-size: 30px;
+    font-weight: bolder;
 }
